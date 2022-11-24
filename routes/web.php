@@ -13,10 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/register', function () {
-	return view('register.create');
-})->name('register');
-
-Route::get('/login', function () {
-	return view('sessions.create');
-})->name('login');
+Route::view('/register', 'register.create')->name('register');
+Route::view('/login', 'sessions.create')->name('login');
