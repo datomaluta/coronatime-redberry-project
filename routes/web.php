@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/register', 'register.create')->name('register');
+Route::view('/login', 'sessions.create')->name('login');

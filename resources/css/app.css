@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input:checked + label {  
+    @apply bg-brand-secondary;  
+    @apply border-none; 
+  }  
+  input:checked + label svg {  
+    @apply block;  
+  }
