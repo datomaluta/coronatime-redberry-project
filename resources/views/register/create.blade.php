@@ -1,6 +1,6 @@
 <x-layout>
     <x-form-layout>
-        <form action="/register" method="POST">
+        <form action="{{route('register.post')}}" method="POST">
             @csrf
             <div class="mb-16 sm:mb-11">
                 <x-svgs.logo />
