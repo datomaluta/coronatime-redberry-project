@@ -14,12 +14,12 @@ class RegisterController extends Controller
 	{
 		$attributes = $request->validated();
 
-		$create_user = User::create($attributes);
+		$createUser = User::create($attributes);
 
 		$token = Str::random(64);
 
 		UserVerify::create([
-			'user_id' => $create_user->id,
+			'user_id' => $createUser->id,
 			'token'   => $token,
 		]);
 
