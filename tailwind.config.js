@@ -14,6 +14,7 @@ module.exports = {
         'dark-100':'#010414',
         'dark-60':'#808189',
         'dash-purple':'#2029F3',
+        'red-error':'#CC1E1E'
       },
       fontFamily:{
         'inter':'Inter, sans-serif',
