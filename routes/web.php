@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -21,9 +22,16 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.p
 Route::view('/login', 'sessions.create')->name('login');
 Route::post('/login', [SessionController::class, 'login'])->name('login.post');
 Route::post('/logout', [SessionController::class, 'logout'])->name('logout');
+Route::get('account/verify/{token}', [RegisterController::class, 'verifyAccount'])->name('user.verify');
 
-Route::view('/confirm', 'email.confirm')->name('confirm');
-Route::view('confirmed', 'email.confirmed')->name('confirmed');
+Route::view('/confirm', 'messages.email-confirm')->name('confirm');
+Route::view('/confirmed', 'messages.email-confirmed')->name('confirmed');
 
 Route::view('dashboard', 'dashboard.index')->name('dashboard')->middleware(['auth', 'is_verify_email']);
-Route::get('account/verify/{token}', [RegisterController::class, 'verifyAccount'])->name('user.verify');
+
+// password reset
+Route::view('/forget-password', 'password.forget')->name('forget.password.get');
+Route::post('/forget-password', [PasswordController::class, 'submitShowPasswordForm'])->name('forget.password.post');
+Route::view('/reset-password/{token}', 'password.reset')->name('reset.password.get');
+Route::post('/reset-password/{token}', [PasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+Route::view('/password-updated', 'messages.password-changed')->name('password.changed');

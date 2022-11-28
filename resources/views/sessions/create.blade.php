@@ -24,7 +24,7 @@
                     <label for="remember" class="text-dark-100 text-[0.875rem] font-semibold cursor-pointer">Remember
                         this device</label>
                 </div>
-                <a href="#" class="text-brand-primary text-[0.875rem] font-semibold ">Forgot password?</a>
+                <a href="{{route('forget.password.get')}}" class="text-brand-primary text-[0.875rem] font-semibold ">Forgot password?</a>
             </div>
 
             <x-form.button>Log in</x-form.button>
