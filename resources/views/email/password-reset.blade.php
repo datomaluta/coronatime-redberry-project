@@ -44,6 +44,6 @@
 
     <p>{{__('reset.click')}}</p>
 
-    <a style="color:#fff"  href="{{route('reset.password.get', $token)}}">{{__('reset.recover password')}}</a>
+    <a style="color:#fff"  href="{{route('reset.password.get', $token)}}">{{__('reset.recover_password')}}</a>
 </body>
 

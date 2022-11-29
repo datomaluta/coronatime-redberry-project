@@ -5,7 +5,7 @@
     </div>
 
     <div class="w-[24.5rem] sm:w-[21.45rem] sm:flex sm:flex-grow sm:items-end">
-        <x-message-button href="{{route('login')}}">{{__('auth.log in')}}</x-message-button>
+        <x-message-button href="{{route('login')}}">{{__('auth.log_in')}}</x-message-button>
     </div>
 
 </x-message-layout>
