@@ -40,10 +40,10 @@
         <img src="{{asset('images/emailimg.png')}}" alt="email">
     </div>
 
-    <h1>Recover password</h1>
+    <h1>{{__('reset.recover password')}}</h1>
 
-    <p>click this button to recover password</p>
+    <p>{{__('reset.click')}}</p>
 
-    <a style="color:#fff"  href="{{route('reset.password.get', $token)}}">Recover password</a>
+    <a style="color:#fff"  href="{{route('reset.password.get', $token)}}">{{__('reset.recover_password')}}</a>
 </body>
 

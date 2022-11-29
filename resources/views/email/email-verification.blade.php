@@ -41,10 +41,10 @@
         <img src="{{asset('images/email_confirm.png')}}" alt="email">
     </div>
 
-    <h1>Confirmation email</h1>
+    <h1>{{__('auth.confirm_email')}}</h1>
 
-    <p>click this button to verify your email</p>
+    <p>{{__('auth.click_button')}}</p>
 
-    <a style="color:#fff"  href="{{ route('user.verify', $token) }}">Verify your email</a>
+    <a style="color:#fff"  href="{{ route('user.verify', $token) }}">{{__('auth.verify_account')}}</a>
 </body>
 
