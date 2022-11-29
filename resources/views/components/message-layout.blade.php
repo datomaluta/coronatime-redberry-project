@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"> @vite('resources/css/app.css')
-
+    @vite(['resources/js/validations.js'])
 </head>
 
 <body class="h-screen flex items-center flex-col font-inter px-4 pb-10 ">
