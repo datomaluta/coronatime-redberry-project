@@ -11,11 +11,13 @@ class SessionController extends Controller
 	{
 		$attributes = $request->validated();
 
-		if (auth()->attempt(['username' => $attributes['username'], 'password' => $attributes['password']]))
+		$rememberMe = $request->has('remember') ? true : false;
+
+		if (auth()->attempt(['username' => $attributes['username'], 'password' => $attributes['password']], $rememberMe))
 		{
 			return redirect(route('dashboard'));
 		}
-		elseif (auth()->attempt(['email' => $attributes['username'], 'password' => $attributes['password']]))
+		elseif (auth()->attempt(['email' => $attributes['username'], 'password' => $attributes['password']], $rememberMe))
 		{
 			return redirect(route('dashboard'));
 		}

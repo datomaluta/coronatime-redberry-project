@@ -6,6 +6,7 @@ return [
 		'string'  => ':attribute უნდა იყოს მინიმუმ :min სიმბოლო.',
 	],
 	'same'               => ' პაროლები ერთმანეთს უნდა ემთხვეოდეს ',
+	'unique'             => 'შეყვანილი :attribute უკვე დაკავებულია',
 
 	'attributes' => [
 		'username'       => 'სახელი',

@@ -28,7 +28,7 @@
                     class="text-brand-primary text-[0.875rem] font-semibold ">{{ __('auth.forgot_password?') }}</a>
             </div>
 
-            <x-form.button>{{ __('auth.log in') }}</x-form.button>
+            <x-form.button>{{ __('auth.log_in') }}</x-form.button>
 
             <div class="mt-6 flex justify-center text-base sm:text-sm">
                 <a class="text-dark-100 font-bold" href="{{ route('register') }}">
