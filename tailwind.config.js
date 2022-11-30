@@ -21,6 +21,7 @@ module.exports = {
         'inter':'Inter, sans-serif',
       },
       screens: {
+        'xl':{'max':'1280px'},
         'lg': {'max': '1023px'},
         'sm':{'max':'639px'}
       },
