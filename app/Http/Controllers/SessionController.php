@@ -13,8 +13,6 @@ class SessionController extends Controller
 
 		$rememberMe = $request->has('remember') ? true : false;
 
-		// dd($rememberMe);
-
 		if (auth()->attempt(['username' => $attributes['username'], 'password' => $attributes['password']], $rememberMe))
 		{
 			return redirect(route('dashboard'));
