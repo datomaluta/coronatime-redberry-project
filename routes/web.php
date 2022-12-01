@@ -30,6 +30,7 @@ Route::view('/confirm', 'messages.email-confirm')->name('confirm');
 Route::view('/confirmed', 'messages.email-confirmed')->name('confirmed');
 
 Route::get('dashboard-worldwide',[DashboardController::class, 'getWorldwide'])->name('dashboard')->middleware(['auth', 'is_verify_email']);
+Route::get('dashboard-country',[DashboardController::class, 'getByCountry'])->name('dashboard.country')->middleware(['auth', 'is_verify_email']);
 
 // password reset
 Route::view('/forget-password', 'password.forget')->name('forget.password.get');
