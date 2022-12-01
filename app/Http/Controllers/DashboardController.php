@@ -16,4 +16,15 @@ class DashboardController extends Controller
 
 		return view('dashboard.worldwide.index', ['data'=>$data]);
 	}
+
+	public function getByCountry()
+	{
+		$data = [
+			'confirmed'=> Country::all()->sum('confirmed'),
+			'recovered'=> Country::all()->sum('recovered'),
+			'deaths'   => Country::all()->sum('deaths'),
+		];
+
+		return view('dashboard.bycountry.index', ['worldwideData'=>$data, 'data'=>Country::all()]);
+	}
 }

@@ -37,6 +37,7 @@ class FetchData extends Command
 			])->json();
 
 			Country::updateOrCreate(
+				['id'=>$stats['id']],
 				[
 					'code'     => $country['code'],
 					'name'     => $country['name'],
