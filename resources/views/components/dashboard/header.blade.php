@@ -27,7 +27,7 @@
             <div x-show="show" class="absolute top-5 right-0 w-[3.5rem] rounded-sm text-center bg-neutral-200">
                 <form id="logout-form" method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button class="text-sm hover: hover:text-red-500" type="submit">Log Out</button>
+                    <button class="text-sm hover: hover:text-red-500" type="submit">{{__('dashboard.log_out')}}</button>
                 </form>
             </div>
         </div>
@@ -35,7 +35,7 @@
         <p class="font-bold pr-4 border-r border-neutral-200 mr-4 sm:hidden">{{Auth::user()->username}}</p>
         <form id="logout-form" method="POST" action="{{ route('logout') }}" class="sm:hidden">
             @csrf
-            <button type="submit">Log Out</button>
+            <button type="submit">{{__('dashboard.log_out')}}</button>
         </form>
 
     </nav>
