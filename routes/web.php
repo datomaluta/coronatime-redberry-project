@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\RegisterController;
@@ -28,7 +29,7 @@ Route::get('account/verify/{token}', [RegisterController::class, 'verifyAccount'
 Route::view('/confirm', 'messages.email-confirm')->name('confirm');
 Route::view('/confirmed', 'messages.email-confirmed')->name('confirmed');
 
-Route::view('dashboard', 'dashboard.worldwide.index')->name('dashboard')->middleware(['auth', 'is_verify_email']);
+Route::get('dashboard-worldwide',[DashboardController::class, 'getWorldwide'])->name('dashboard')->middleware(['auth', 'is_verify_email']);
 
 // password reset
 Route::view('/forget-password', 'password.forget')->name('forget.password.get');

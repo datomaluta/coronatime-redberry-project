@@ -21,11 +21,11 @@
     <div class="max-w-[90rem] mx-auto py-5 px-28 sm:px-4">
         <x-dashboard.header/>
 
-        <h1 class="text-dark-100 text-2xl font-extrabold mt-10 sm:text-xl sm:mt-6">Worldwide Statistics</h1>
+        <h1 class="text-dark-100 text-2xl font-extrabold mt-10 sm:text-xl sm:mt-6">{{__('dashboard.worldwide_statistics')}}</h1>
 
         <nav class="border-b border-neutral-100 mt-10 pb-4 sm:mt-6">
-            <a class="text-base font-bold text-dark-100 border-b-2 border-dark-100 mr-[4.5rem] pb-4 sm:mr-6 sm:text-sm" href="#">Worldwide</a>
-            <a class="text-base font-normal text-dark-100 sm:text-sm" href="#">By country</a>
+            <a class="text-base font-bold text-dark-100 border-b-2 border-dark-100 mr-[4.5rem] pb-4 sm:mr-6 sm:text-sm" href="#">{{__('dashboard.worldwide')}}</a>
+            <a class="text-base font-normal text-dark-100 sm:text-sm" href="#">{{__('dashboard.by_country')}}</a>
         </nav>
 
         {{ $slot }}
