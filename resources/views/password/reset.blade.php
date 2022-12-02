@@ -1,9 +1,9 @@
 <x-message-layout>
-    <form action="{{route('reset.password.post', $token)}}" method="POST">
+    <form class="sm:h-full" action="{{route('reset.password.post', $token)}}" method="POST">
         @csrf
 
     
-    <div class="w-[24.5rem] lg:mx-auto sm:w-[21.45rem] mx-auto flex flex-col items-center sm:flex-grow">
+    <div class="w-[24.5rem] sm:h-full lg:mx-auto sm:w-[21.45rem] mx-auto flex flex-col items-center sm:flex-grow">
         <h1 class="text-dark-100 text-2xl font-extrabold mb-14 mt-36 sm:mt-11">{{__('reset.reset_password')}}</h1>
 
         <div class="mb-14 w-full">

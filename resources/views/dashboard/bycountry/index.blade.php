@@ -29,7 +29,7 @@
             </a>
         </div>
 
-        <div class="h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-zinc-500 ">
+        <div class="h-full sm:pb-4 overflow-y-scroll scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-zinc-500 ">
             <div class="flex py-4 px-10 lg:px-2 border-b border-neutral-100">
                 <p class=" w-1/4">{{ __('dashboard.worldwide') }}</p>
                 <p class=" w-1/4">{{ number_format($worldwideData['confirmed']) }}</p>
@@ -39,10 +39,10 @@
 
             @foreach ($data as $country)
                 <div class="flex py-4 px-10 lg:px-2 border-b border-neutral-100 break-words">
-                    <p class=" w-1/4 sm:pr-2">{{ ucwords($country->name) }}</p>
-                    <p class=" w-1/4">{{ $country->confirmed }}</p>
-                    <p class=" w-1/4 sm:pl-3">{{ $country->deaths }}</p>
-                    <p class=" w-1/4 sm:pl-3">{{ $country->recovered }}</p>
+                    <p class="w-1/4 sm:pr-2">{{ ucwords($country->name) }}</p>
+                    <p class="w-1/4">{{ $country->confirmed }}</p>
+                    <p class="w-1/4 sm:pl-3">{{ $country->deaths }}</p>
+                    <p class="w-1/4 sm:pl-3">{{ $country->recovered }}</p>
                 </div>
             @endforeach
         </div>
