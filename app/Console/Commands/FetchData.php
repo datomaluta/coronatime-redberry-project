@@ -40,7 +40,10 @@ class FetchData extends Command
 				['id'=>$stats['id']],
 				[
 					'code'     => $country['code'],
-					'name'     => $country['name'],
+					'name'     => [
+						'en'=> strtolower($country['name']['en']),
+						'ka'=> $country['name']['ka'],
+					],
 					'confirmed'=> $stats['confirmed'],
 					'recovered'=> $stats['recovered'],
 					'deaths'   => $stats['deaths'],
