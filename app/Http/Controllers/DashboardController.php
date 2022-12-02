@@ -25,6 +25,6 @@ class DashboardController extends Controller
 			'deaths'   => Country::all()->sum('deaths'),
 		];
 
-		return view('dashboard.bycountry.index', ['worldwideData'=>$data, 'data'=>Country::all()]);
+		return view('dashboard.bycountry.index', ['worldwideData'=>$data, 'data'=>Country::filter(request(['search', 'location', 'confirmed', 'deaths', 'recovered']))->get()]);
 	}
 }

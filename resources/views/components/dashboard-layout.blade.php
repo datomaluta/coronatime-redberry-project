@@ -24,8 +24,12 @@
         <h1 class="text-dark-100 text-2xl font-extrabold mt-10 sm:text-xl sm:mt-6">{{__('dashboard.worldwide_statistics')}}</h1>
 
         <nav class="border-b border-neutral-100 mt-10 pb-4 sm:mt-6">
-            <a class="text-base font-bold text-dark-100 border-b-2 border-dark-100 mr-[4.5rem] pb-4 sm:mr-6 sm:text-sm" href="#">{{__('dashboard.worldwide')}}</a>
-            <a class="text-base font-normal text-dark-100 sm:text-sm" href="#">{{__('dashboard.by_country')}}</a>
+            <a class="text-base  text-dark-100  mr-[4.5rem] pb-[1.1rem] sm:mr-6 sm:text-sm
+            {{ Route::current()->getName() == 'dashboard' ? 'border-b-2 border-dark-100 font-bold' : '' }}"
+                href="/dashboard-worldwide">{{__('dashboard.worldwide')}}</a>
+            <a class="text-base text-dark-100 pb-[1.1rem] sm:text-sm
+            {{ Route::current()->getName() == 'dashboard.country' ? 'border-b-2 border-dark-100 font-bold' : '' }}"
+                href="/dashboard-country">{{__('dashboard.by_country')}}</a>
         </nav>
 
         {{ $slot }}
