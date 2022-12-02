@@ -1,7 +1,8 @@
 <x-layout>
     <x-form-layout>
-        <div class="mb-16 sm:mb-11">
+        <div class="mb-16 sm:mb-11 flex gap-6 items-center">
             <x-svgs.logo />
+            <x-dashboard.lang-switcher/>
         </div>
 
         <div class="mb-6">

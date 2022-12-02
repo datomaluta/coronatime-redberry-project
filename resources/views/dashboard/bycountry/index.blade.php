@@ -1,7 +1,7 @@
 <x-dashboard-layout>
     <form method="GET" action="#" class="mt-10 sm:mt-6">
         <div class="relative">
-            <input type="text" name="search" placeholder="Search by country" value="{{request('search')}}"
+            <input type="text" name="search" placeholder="{{__('dashboard.search')}}" value="{{request('search')}}"
                 class="border border-neutral-200 py-4 rounded-lg pl-14 sm:pl-10 sm:border-none sm:text-sm sm:py-2">
             <x-svgs.search class="absolute left-6 top-1/2 -translate-y-1/2 sm:left-1" />
         </div>
