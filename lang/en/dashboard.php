@@ -9,4 +9,5 @@ return [
 	'deaths'                    => 'Deaths',
 	'log_out'                   => 'Log out',
 	'location'                  => 'Location',
+	'search'                    => 'Search by country',
 ];

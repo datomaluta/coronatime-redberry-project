@@ -24,7 +24,7 @@ class SessionController extends Controller
 		else
 		{
 			throw ValidationException::withMessages([
-				'username'=> 'Your provided credentials not be verified.',
+				'username' => [__('auth.failed')],
 			]);
 		}
 
