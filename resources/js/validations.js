@@ -42,7 +42,7 @@ const emailValidate = (input, inputCheck)=>{
     }
 }
 
-username && username.addEventListener('change',function(){
+username && username.addEventListener('keyup',function(){
     if(username.value.length>=3 && username.value.match(onlyEnglish)){
         setValidateStyle(username, usernameCheck);
     }else if(username.value.match(mailFormat)){
@@ -53,15 +53,15 @@ username && username.addEventListener('change',function(){
 });
 
 
-password && password.addEventListener('change', function(){
+password && password.addEventListener('keyup', function(){
     inputValidate(password, passwordCheck);
 });
 
-repeatPassword && repeatPassword.addEventListener('change',function(){
+repeatPassword && repeatPassword.addEventListener('keyup',function(){
     inputValidate(repeatPassword, repeatPasswordCheck);
 })
 
-email && email.addEventListener('change',function(){
+email && email.addEventListener('keyup',function(){
     emailValidate(email, emailCheck);
 })
 
