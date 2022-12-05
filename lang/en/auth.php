@@ -43,4 +43,6 @@ return [
 	'confirm_email'                 => 'Confirmation email',
 	'click_button'                  => 'Click this button to verify your email',
 	'verify_account'                => 'Verify your email',
+
+	'not_verified'                  => 'Your Email is not verified',
 ];

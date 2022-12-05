@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginUserRequest;
+use App\Models\User;
 use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
@@ -12,6 +13,16 @@ class SessionController extends Controller
 		$attributes = $request->validated();
 
 		$rememberMe = $request->has('remember') ? true : false;
+
+		$user = User::where('username', $attributes['username'])
+		->orWhere('email', $attributes['username'])->first();
+
+		if ($user && !$user->is_email_verified)
+		{
+			throw ValidationException::withMessages([
+				'username' => [__('auth.not_verified')],
+			]);
+		}
 
 		if (auth()->attempt(['username' => $attributes['username'], 'password' => $attributes['password']], $rememberMe))
 		{
