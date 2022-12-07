@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterUserRequest;
+use App\Mail\VerifyMail;
 use App\Models\User;
 use App\Models\UserVerify;
 use Illuminate\Support\Str;
@@ -23,10 +24,12 @@ class RegisterController extends Controller
 			'token'   => $token,
 		]);
 
-		FacadesMail::send('email.email-verification', ['token' => $token], function ($message) use ($request) {
-			$message->to($request->email);
-			$message->subject('Email Verification Mail');
-		});
+		// FacadesMail::send('email.email-verification', ['token' => $token], function ($message) use ($request) {
+		// 	$message->to($request->email);
+		// 	$message->subject('Email Verification Mail');
+		// });
+
+		FacadesMail::to($createUser->email)->send(new VerifyMail($token));
 
 		return redirect(route('confirm'));
 	}

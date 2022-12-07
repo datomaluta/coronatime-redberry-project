@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Mail\VerifyMail;
 use App\Models\User;
 use App\Models\UserVerify;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -227,13 +228,11 @@ class RegisterTest extends TestCase
 
 		$token = $userVerify->token;
 
-		FacadesMail::send('email.email-verification', ['token' => $token], function ($message) use ($email) {
-			$message->to($email);
-			$message->subject('Email Verification Mail');
+		FacadesMail::assertSent(VerifyMail::class, function ($mail) {
+			$mail->envelope();
+			$mail->content();
+			return true;
 		});
-
-		FacadesMail::assertSent();
-		FacadesMail::assertNothingSent();
 
 		$response->assertRedirect(route('confirm'));
 
