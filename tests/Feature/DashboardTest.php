@@ -79,7 +79,7 @@ class DashboardTest extends TestCase
 		$response->assertSuccessful();
 	}
 
-	public function test_on_dashboard_deathss_orting_asc()
+	public function test_on_dashboard_deaths_sorting_asc()
 	{
 		$response = $this->actingAs($this->user)->call('GET', '/dashboard-country', ['deaths'=>'asc']);
 		$response->assertSuccessful();
@@ -91,7 +91,7 @@ class DashboardTest extends TestCase
 		$response->assertSuccessful();
 	}
 
-	public function test_on_dashboard_recovereds_sorting_asc()
+	public function test_on_dashboard_recovered_sorting_asc()
 	{
 		$response = $this->actingAs($this->user)->call('GET', '/dashboard-country', ['recovered'=>'asc']);
 		$response->assertSuccessful();
