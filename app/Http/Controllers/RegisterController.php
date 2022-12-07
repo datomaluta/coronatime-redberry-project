@@ -24,11 +24,6 @@ class RegisterController extends Controller
 			'token'   => $token,
 		]);
 
-		// FacadesMail::send('email.email-verification', ['token' => $token], function ($message) use ($request) {
-		// 	$message->to($request->email);
-		// 	$message->subject('Email Verification Mail');
-		// });
-
 		FacadesMail::to($createUser->email)->send(new VerifyMail($token));
 
 		return redirect(route('confirm'));
