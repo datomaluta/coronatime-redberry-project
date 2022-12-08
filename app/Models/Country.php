@@ -29,7 +29,7 @@ class Country extends Model
 	public function scopeFilter($query, array $filters)
 	{
 		$query->when($filters['search'] ?? false, function ($query, $search) {
-			$query->where('name', 'like', '%' . $search . '%')->get();
+			$query->where('name', 'like', '%' . strtolower($search) . '%')->get();
 		});
 
 		$query->when($filters['location'] ?? false, function ($query, $location) {

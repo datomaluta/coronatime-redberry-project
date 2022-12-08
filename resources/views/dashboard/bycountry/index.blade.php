@@ -19,7 +19,7 @@
                 <x-svgs.sort query="confirmed"/>
             </a>
             <a href="{{ route('dashboard.country', ['deaths' => request('deaths') == 'desc' ? 'asc' : 'desc','search'=>request('search')]) }}"
-                class="flex items-center gap-1 sm:gap-0 sm:break-all w-1/4 sm:justify-center font-semibold">
+                class="flex items-center gap-1 sm:gap-0 sm:break-all w-1/4 sm:ml-3 font-semibold">
                 {{ __('dashboard.deaths') }}
                 <x-svgs.sort query="deaths"/>
             </a>
