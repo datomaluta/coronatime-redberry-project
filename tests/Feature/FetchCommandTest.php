@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class FetchCommandTest extends TestCase
 {
+	use RefreshDatabase;
+
 	public function test_fetch_command()
 	{
 		Http::fake([

@@ -26,7 +26,7 @@ const setNormalStyle = (input, inputCheck)=>{
 }
 
 const inputValidate = (input, inputCheck)=>{
-    if(input.value.length>=3){
+    if(input.value.length>=4){
         setValidateStyle(input, inputCheck);
     } else {
         setNormalStyle(input, inputCheck);

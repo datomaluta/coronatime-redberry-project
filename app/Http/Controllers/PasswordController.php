@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ForgetPasswordRequest;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Mail\ResetMail;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -24,10 +25,7 @@ class PasswordController extends Controller
 			'created_at' => Carbon::now(),
 		]);
 
-		FacadesMail::send('email.password-reset', ['token' => $token], function ($message) use ($request) {
-			$message->to($request->email);
-			$message->subject('Reset Password');
-		});
+		FacadesMail::to($request->email)->send(new ResetMail($token));
 
 		return redirect(route('confirm'));
 	}
@@ -43,17 +41,6 @@ class PasswordController extends Controller
 		->first();
 
 		$email = $resetData->email;
-
-		$updatePassword = DB::table('password_resets')
-							->where([
-								'token' => $token,
-							])
-							->first();
-
-		if (!$updatePassword)
-		{
-			return back()->withInput()->with('error', 'Invalid token!');
-		}
 
 		$user = User::where('email', $email)
 					->update(['password' =>bcrypt($request->password)]);
