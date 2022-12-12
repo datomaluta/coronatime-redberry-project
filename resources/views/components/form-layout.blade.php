@@ -1,10 +1,10 @@
-<div class="w-[90rem] h-[56.3rem] flex  justify-between sm:h-full lg:w-auto items-center">
-    <div class=" px-28 py-10 flex-grow sm:px-4 sm:py-6">
-        <div class="lg:mx-auto py-14 sm:w-[21.45rem]">
+<div class="w-full h-full flex sm:h-full lg:w-auto ">
+    <div class="py-10 flex-grow sm:px-4 sm:py-6">
+        <div class="lg:mx-auto w-max sm:w-[21.45rem] mx-auto">
             {{ $slot }}
         </div>
     </div>
-    <div class="lg:hidden">
+    <div class="h-full lg:hidden">
         <img class="h-full" src="{{ url('images/covid.png') }}" alt="covid">
     </div>
 </div>
