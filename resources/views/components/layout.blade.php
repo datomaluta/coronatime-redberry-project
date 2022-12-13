@@ -16,7 +16,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="h-screen flex justify-center items-center font-inter">
+<body class="h-screen sm:h-full flex justify-center items-center font-inter">
     {{ $slot }}
 
 </body>
