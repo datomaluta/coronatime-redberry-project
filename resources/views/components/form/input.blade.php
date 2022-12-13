@@ -13,7 +13,7 @@
         outline-none transition-all focus:border-brand-primary focus:shadow focus:shadow-blue-100 font-inherit
         {{ $errors->first($name) ? ' border-red-error' : '' }}"
             type="{{ $type }}" name="{{ $name }}" id="{{ $name }}"
-            placeholder="{{ __("auth.$placeholder") }}" required {{ $attributes(['value' => old($name)]) }}>
+            placeholder="{{ __("auth.$placeholder") }}" {{ $attributes(['value' => old($name)]) }}>
         <x-svgs.validation-check id="{{ $name }}-check" />
     </div>
     <x-form.error name="{{ $name }}" />
