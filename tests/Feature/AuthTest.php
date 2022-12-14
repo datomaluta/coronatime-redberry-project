@@ -14,7 +14,7 @@ class AuthTest extends TestCase
 	{
 		$response = $this->get('/login');
 		$response->assertSuccessful('');
-		$response->assertViewIs('sessions.create');
+		$response->assertViewIs('auth.login');
 	}
 
 	public function test_auth_should_give_us_errors_if_input_is_not_provided()

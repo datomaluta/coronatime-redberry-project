@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class RegisterController extends Controller
 {
-	public function store(RegisterUserRequest $request)
+	public function register(RegisterUserRequest $request)
 	{
 		$attributes = $request->validated();
 
