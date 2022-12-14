@@ -17,7 +17,7 @@ class RegisterTest extends TestCase
 	{
 		$response = $this->get('/register');
 		$response->assertSuccessful();
-		$response->assertViewIs('register.create');
+		$response->assertViewIs('auth.register');
 	}
 
 	public function test_register_should_give_us_errors_if_input_is_not_provided()

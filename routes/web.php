@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/login')->name('home');
 
 Route::middleware('guest')->group(function () {
-	Route::view('/register', 'register.create')->name('register');
-	Route::post('/register', [RegisterController::class, 'store'])->name('register.post');
-	Route::view('/login', 'sessions.create')->name('login');
+	Route::view('/register', 'auth.register')->name('register');
+	Route::post('/register', [RegisterController::class, 'register'])->name('register.post');
+	Route::view('/login', 'auth.login')->name('login');
 	Route::post('/login', [SessionController::class, 'login'])->name('login.post');
 
 	Route::get('account/verify/{token}', [RegisterController::class, 'verifyAccount'])->name('user.verify');
