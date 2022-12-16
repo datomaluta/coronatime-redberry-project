@@ -7,6 +7,7 @@ return [
 	],
 	'same'               => ' პაროლები ერთმანეთს უნდა ემთხვეოდეს ',
 	'unique'             => 'შეყვანილი :attribute უკვე დაკავებულია',
+	'required'           => ':attribute აუცილებელია.',
 	'email'              => 'შეყვანილი :attribute არავალიდურია',
 
 	'attributes' => [
